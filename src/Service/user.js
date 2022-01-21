@@ -94,7 +94,7 @@ const VerifyUserLogin = async (userName, password) => {
             token = jwt.sign({ id: user[0]._id, username: user[0].userName, type: "user" },
                 JWT_SECRET
             );
-            return { status: "ok", toekn: token, userDetails: user };
+            return { status: "ok", token: token, userDetails: user };
         }
         return { status: "error", error: "invalid password" };
     } catch (error) {
